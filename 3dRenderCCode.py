@@ -1,5 +1,6 @@
 import math
 import time
+import os
 
 cash_map = {}
 
@@ -92,11 +93,15 @@ for i in range(360):
 		points_square[j] = rotate_y(points_square[j], 1)
 	render_cash(i, points_square)
 
+clear = lambda: os.system('cls')
+
 def main():
-	while True:
-		speed_out=8
-		for i in range(0,360,speed_out):
-			print(cash_map.get(round(i)))
-			time.sleep(10*speed_out/1000)
+    while True:
+        speed_out = 8
+        for i in range(0, 360, speed_out):
+            clear()
+            print(cash_map.get(round(i)))
+            time.sleep(10 * speed_out / 1000)
 
 main()
+
